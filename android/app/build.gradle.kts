@@ -5,10 +5,12 @@ plugins {
 }
 
 android {
-    // ⚠️ نکته: اگر اسم پکیجت چیز دیگری است، این خط و خط applicationId را با آن هماهنگ کن
+    // اگر اسم پکیجت چیز دیگری است، این دو خط (namespace و applicationId) را با آن هماهنگ کن
     namespace = "com.example.bahanehsaz" 
+    compileSdk = 34
     
-    compileSdk = 34 // نسخه اندروید برای کامپایل
+    // 🔴 این خط مهم‌ترین بخش است: تعیین نسخه پایدار NDK
+    ndkVersion = "26.1.10909125"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -20,7 +22,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.bahanehsaz" // شناسه یکتای اپ شما در مایکت
+        applicationId = "com.example.bahanehsaz"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
@@ -29,7 +31,7 @@ android {
 
     buildTypes {
         release {
-            // فعلاً برای اینکه بیلد رد بشه از امضای دیباگ استفاده میکنیم
+            // فعلاً برای اینکه بیلد رد بشه از امضای دیباگ استفاده می‌کنیم
             signingConfig = signingConfigs.getByName("debug")
         }
     }
