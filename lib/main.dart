@@ -5,6 +5,7 @@ import 'services/storage_service.dart';
 import 'screens/home_screen.dart';
 
 void main() async {
+  // این خط حتماً باید باشه تا دیتابیس قبل از باز شدن اپ آماده بشه
   WidgetsFlutterBinding.ensureInitialized();
   
   // راه‌اندازی دیتابیس محلی Hive
@@ -29,7 +30,8 @@ class BahanehsazApp extends StatelessWidget {
             seedColor: const Color(0xFFFF8A3D),
           ),
           useMaterial3: true,
-          // fontFamily: 'Vazirmatn', // اگر فونت وزیرمتن رو اضافه کردی، این خط رو از کامنت دربیار
+          // اگر فونت وزیرمتن (Vazirmatn) رو به پروژه اضافه کردی، علامت کامنت خط زیر رو بردار:
+          // fontFamily: 'Vazirmatn', 
         ),
         // این بخش اپ رو کاملاً راست‌چین (فارسی) می‌کنه
         builder: (context, child) => Directionality(
